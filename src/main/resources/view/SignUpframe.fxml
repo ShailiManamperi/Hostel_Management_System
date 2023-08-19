@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="300.0" prefWidth="300.0" styleClass="div" stylesheets="@../stylesheet/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.SignUpframeController">
+   <children>
+      <Text fill="#d4d0d0" layoutX="77.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="5.0" text="Create an Account">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="txtemployeeid" focusColor="BLACK" layoutX="82.0" layoutY="50.0" prefHeight="25.0" prefWidth="155.0" promptText="Employee Id" style="-fx-prompt-text-fill: White; -fx-text-fill: White;" unFocusColor="#6e6c6c" />
+      <JFXTextField fx:id="txtusername" focusColor="BLACK" layoutX="60.0" layoutY="85.0" prefHeight="25.0" prefWidth="198.0" promptText="User Name" style="-fx-prompt-text-fill: White; -fx-text-fill: White;" unFocusColor="#6e6c6c" />
+      <JFXPasswordField fx:id="tpspassword" layoutX="60.0" layoutY="121.0" prefHeight="25.0" prefWidth="198.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" />
+      <JFXPasswordField fx:id="tpsrepassword" layoutX="60.0" layoutY="155.0" prefHeight="25.0" prefWidth="198.0" promptText="Re-enter Password" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" />
+      <JFXTextField fx:id="txtpassword" focusColor="BLACK" layoutX="60.0" layoutY="121.0" prefHeight="25.0" prefWidth="198.0" style="-fx-prompt-text-fill: White; -fx-text-fill: White;" unFocusColor="#6e6c6c" />
+      <JFXTextField fx:id="txtrepassword" focusColor="BLACK" layoutX="61.0" layoutY="155.0" prefHeight="25.0" prefWidth="198.0" style="-fx-prompt-text-fill: White; -fx-text-fill: White;" unFocusColor="#6e6c6c" />
+      <ImageView fx:id="showPssword" fitHeight="20.0" fitWidth="20.0" layoutX="237.0" layoutY="124.0" onMouseClicked="#showpasswordOnMOuseClicekd" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icons8-hide-48%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hidepassword" fitHeight="20.0" fitWidth="20.0" layoutX="237.0" layoutY="124.0" onMouseClicked="#hidepasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icons8-eye-48%20(1).png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btncreate" layoutX="100.0" layoutY="226.0" onAction="#createacountOnAction" prefHeight="25.0" prefWidth="101.0" style="-fx-border-radius: 60; -fx-border-color: white;" text="Create" textFill="#fffdfd">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txthint" focusColor="BLACK" layoutX="61.0" layoutY="189.0" prefHeight="25.0" prefWidth="198.0" promptText="Hint" style="-fx-prompt-text-fill: White; -fx-text-fill: White;" unFocusColor="#6e6c6c" />
+      <Text fill="#ebd5d5" layoutX="46.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have Account ?" textAlignment="CENTER" wrappingWidth="124.80337524414062" />
+      <Text fx:id="txtlogin" fill="#ebd5d5" layoutX="177.0" layoutY="282.0" onMouseClicked="#loginFrameONMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" underline="true" wrappingWidth="48.80340576171875">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

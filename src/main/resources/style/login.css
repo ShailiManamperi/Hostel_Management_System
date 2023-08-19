@@ -1,0 +1,6 @@
+.div {
+    -fx-background-color: linear-gradient(to left, #fffdfd 11%, #ffffff 100%);
+}
+#btnlogin{
+    -fx-background-color:linear-gradient(to left, #003366 11%, #336699 100%);
+}

@@ -1,0 +1,11 @@
+#pane1,#pane2,#pane3,#pane4{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 1, 0.0);
+    -fx-text-fill: #241468;
+}
+#pane1:hover,#pane2:hover,#pane3:hover,#pane4:hover{
+    -fx-effect: dropshadow(gaussian, rgba(184, 129, 252, 0.4), 10, 0.5, 1, 0.0);
+}

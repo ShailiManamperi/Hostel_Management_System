@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="300.0" prefWidth="300.0" styleClass="div" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.SignInFrameController">
+   <children>
+      <Text fill="#363434" layoutX="82.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="5.0" text="Login to Account">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="txtusername" focusColor="BLACK" layoutX="51.0" layoutY="69.0" prefHeight="25.0" prefWidth="198.0" promptText="User Name" style="-fx-prompt-text-fill: black; -fx-text-fill: black;" unFocusColor="#6e6c6c" />
+      <Text fx:id="forgetpassword" fill="#484141" layoutX="150.0" layoutY="175.0" onMouseClicked="#forgetpasswordframeOnMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget password ?" textAlignment="CENTER" underline="true" wrappingWidth="101.47003173828125" />
+      <JFXButton fx:id="btnlogin" layoutX="99.0" layoutY="198.0" onAction="#MainDashBoradOnAction" prefHeight="25.0" prefWidth="101.0" style="-fx-border-radius: 60; -fx-border-color: white; -fx-background-radius: 60;" text="Login" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Text fill="#484141" layoutX="67.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to Logistics ?" textAlignment="CENTER" wrappingWidth="101.47003173828125" />
+      <Text fx:id="txtsignin" fill="#484141" layoutX="169.0" layoutY="273.0" onMouseClicked="#signinFrameONMouseClicked" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in" textAlignment="CENTER" underline="true" wrappingWidth="48.80340576171875">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <JFXPasswordField fx:id="tpspassword" layoutX="51.0" layoutY="126.0" prefHeight="25.0" prefWidth="198.0" promptText="Password" style="-fx-prompt-text-fill: black; -fx-text-fill: black;" />
+      <JFXTextField fx:id="txtpassword" focusColor="BLACK" layoutX="51.0" layoutY="126.0" prefHeight="25.0" prefWidth="198.0" style="-fx-prompt-text-fill: black; -fx-text-fill: black;" unFocusColor="#6e6c6c" />
+      <ImageView fx:id="showpassword" fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="128.0" onMouseClicked="#ShowPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/icons8-hide-48%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="showpassword1" fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="128.0" onMouseClicked="#hodePasswordOnMpouseClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/icons8-eye-48%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
