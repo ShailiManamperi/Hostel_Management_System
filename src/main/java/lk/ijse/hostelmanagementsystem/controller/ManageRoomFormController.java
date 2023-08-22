@@ -30,6 +30,7 @@ public class ManageRoomFormController {
     public TableColumn<RoomTM,String> colRoomId;
     public TableColumn<RoomTM,String> colRoomType;
     public TableColumn<RoomTM,Double> colKeyMoney;
+    public JFXComboBox cmbRoomTypeDescription;
 
 
     private RoomTypeService roomTypeService;
@@ -42,6 +43,9 @@ public class ManageRoomFormController {
         visualizeComboBox();
         visualize();
         getDataToTable();
+        String[] type = {"Ac-Food", "Non Ac - Food", "Ac - Non Food", "Non Ac - Non Food "};
+        ObservableList<String> list = FXCollections.observableArrayList(type);
+        cmbRoomTypeDescription.setItems(list);
     }
 
     public void setComboBox(){
@@ -87,7 +91,7 @@ public class ManageRoomFormController {
 
     public RoomTypeDTO collectRoomTypeDto(){
         String roomTypeId = txtRoomTypeId.getText();
-        String description = txtRoomTypeDescription.getText();
+        String description = cmbRoomTypeDescription.getSelectionModel().getSelectedItem().toString();
         double keyMoney = Double.parseDouble(txtKeyMoney.getText());
 
         return new RoomTypeDTO(roomTypeId,description,keyMoney,null);

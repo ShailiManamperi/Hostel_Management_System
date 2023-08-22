@@ -1,13 +1,7 @@
 package lk.ijse.hostelmanagementsystem.util;
 
-import lk.ijse.hostelmanagementsystem.dto.custom.RoomDTO;
-import lk.ijse.hostelmanagementsystem.dto.custom.RoomTypeDTO;
-import lk.ijse.hostelmanagementsystem.dto.custom.StudentDTO;
-import lk.ijse.hostelmanagementsystem.dto.custom.StudentRoomDTO;
-import lk.ijse.hostelmanagementsystem.entity.custom.Room;
-import lk.ijse.hostelmanagementsystem.entity.custom.RoomType;
-import lk.ijse.hostelmanagementsystem.entity.custom.Student;
-import lk.ijse.hostelmanagementsystem.entity.custom.StudentRoom;
+import lk.ijse.hostelmanagementsystem.dto.custom.*;
+import lk.ijse.hostelmanagementsystem.entity.custom.*;
 import lk.ijse.hostelmanagementsystem.tm.RemainingKeyMoneyTM;
 import lk.ijse.hostelmanagementsystem.tm.ReservedOrAvailableRoomTM;
 import lk.ijse.hostelmanagementsystem.tm.RoomTM;
@@ -34,6 +28,14 @@ public class Converter {
     public StudentDTO toOnlyStudentDTO(Student student){
         return new StudentDTO(student.getId(),student.getName(),student.getAddress(),
                 student.getCity(),student.getContact(),student.getGmail(),null);
+    }
+
+    public UserDTO toOnlyUserDTO(User user){
+        return new UserDTO(user.getUsername(), user.getPassword());
+    }
+
+    public User toOnlyUser(UserDTO userDTO){
+        return new User(userDTO.getUsername(), userDTO.getPassword());
     }
 
     @SuppressWarnings("Individual Converter From RoomDTO to Room Entity")

@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.hostelmanagementsystem.dto.custom.UserDTO;
 
 import java.io.IOException;
 
@@ -65,6 +66,17 @@ public class SignUpframeController {
     }
 
     public void createacountOnAction(ActionEvent actionEvent) {
+        if (tpspassword.getText().equals(tpsrepassword.getText())){
+            UserDTO userDTO = makeObject();
+
+        }
+
+    }
+
+    private UserDTO makeObject() {
+        String username = txtusername.getText();
+        String password = tpspassword.getText();
+        return new UserDTO(username,password);
     }
 
     public void loginFrameONMouseClicked(MouseEvent mouseEvent) throws IOException {

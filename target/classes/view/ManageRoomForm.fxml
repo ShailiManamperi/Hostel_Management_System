@@ -19,10 +19,10 @@
             <Image url="@../assets/background%20(2).jpg" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="pane2" layoutX="105.0" layoutY="89.0" prefHeight="200.0" prefWidth="361.0">
+      <AnchorPane fx:id="pane2" layoutX="35.0" layoutY="89.0" prefHeight="200.0" prefWidth="361.0">
          <children>
-            <JFXTextField fx:id="txtRoomId" layoutX="30.0" layoutY="37.0" prefHeight="25.0" prefWidth="188.0" promptText="Room Id" />
-            <JFXComboBox fx:id="cbRoomType" layoutX="30.0" layoutY="126.0" prefHeight="25.0" prefWidth="188.0" promptText="Type" />
+            <JFXTextField fx:id="txtRoomId" layoutX="37.0" layoutY="121.0" prefHeight="25.0" prefWidth="188.0" promptText="Room Id" />
+            <JFXComboBox fx:id="cbRoomType" layoutX="34.0" layoutY="53.0" prefHeight="25.0" prefWidth="188.0" promptText="Type" />
             <JFXButton fx:id="btnAdd1" layoutX="260.0" layoutY="23.0" onAction="#btnAddRoomOnAction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #54B435;" text="Add " textFill="#120101">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -66,7 +66,6 @@
             </Label>
             <Separator layoutX="26.0" layoutY="55.0" opacity="0.47" prefHeight="4.0" prefWidth="343.0" />
             <JFXTextField fx:id="txtRoomTypeId" layoutX="55.0" layoutY="79.0" prefHeight="25.0" prefWidth="310.0" promptText="Room Type Id" />
-            <JFXTextField fx:id="txtRoomTypeDescription" layoutX="56.0" layoutY="139.0" prefHeight="25.0" prefWidth="304.0" promptText="Description" />
             <JFXTextField fx:id="txtKeyMoney" layoutX="53.0" layoutY="201.0" prefHeight="25.0" prefWidth="304.0" promptText="KeyMoney (LKR)" />
             <JFXButton fx:id="btnAdd" layoutX="37.0" layoutY="280.0" onAction="#btnAddRoomTypeOnAction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: #54B435;" text="Add " textFill="#120101">
                <font>
@@ -88,6 +87,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
+            <JFXComboBox fx:id="cmbRoomTypeDescription" layoutX="56.0" layoutY="139.0" prefHeight="25.0" prefWidth="303.0" promptText="Description" />
          </children>
       </AnchorPane>
    </children>

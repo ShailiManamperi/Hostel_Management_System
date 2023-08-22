@@ -30,7 +30,6 @@ lk\ijse\hostelmanagementsystem\controller\ReserveRoomsFormController$2.class
 lk\ijse\hostelmanagementsystem\controller\ManageRoomFormController$1.class
 lk\ijse\hostelmanagementsystem\service\custom\impl\RoomServiceImpl.class
 lk\ijse\hostelmanagementsystem\controller\ReserveRoomsFormController.class
-Test.class
 lk\ijse\hostelmanagementsystem\entity\custom\User.class
 lk\ijse\hostelmanagementsystem\service\custom\StudentRoomService.class
 lk\ijse\hostelmanagementsystem\repo\custom\impl\StudentRoomRepoImpl.class
