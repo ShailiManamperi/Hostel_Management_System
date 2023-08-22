@@ -18,6 +18,5 @@ public class AppInitializer extends Application {
         Parent load = FXMLLoader.load(getClass().getResource("/view/mainform.fxml"));
         primaryStage.setScene(new Scene(load));
         primaryStage.show();
-        //FactoryConfiguration.getInstance();
     }
 }
