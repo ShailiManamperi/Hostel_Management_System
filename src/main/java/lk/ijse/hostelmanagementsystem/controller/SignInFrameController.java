@@ -14,8 +14,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lk.ijse.hostelmanagementsystem.dto.custom.UserDTO;
+import lk.ijse.hostelmanagementsystem.service.custom.UserService;
+import lk.ijse.hostelmanagementsystem.service.custom.impl.UserServiceImpl;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class SignInFrameController {
@@ -27,6 +31,7 @@ public class SignInFrameController {
     public JFXButton btnlogin;
     public JFXTextField txtusername;
 
+    private final UserService userService = new UserServiceImpl();
     public void initialize()  {
         showpassword1.setVisible(false);
         txtpassword.setVisible(false);
@@ -36,21 +41,42 @@ public class SignInFrameController {
     }
 
     public void MainDashBoradOnAction(ActionEvent actionEvent) throws IOException {
-       if (actionEvent.getSource() == btnlogin) {
-            String username = txtusername.getText();
-            String password = txtpassword.getText();
-            if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("1234")) {
-                System.out.println("login success");
-                Stage window = (Stage) pane.getScene().getWindow();
-                window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"))));
-                window.centerOnScreen();
-            } else if
-            (txtusername.getText().isEmpty() && txtpassword.getText().isEmpty()) {
-                new Alert(Alert.AlertType.WARNING,"Please enter your data.", ButtonType.OK).show();
-            } else {
-                new Alert(Alert.AlertType.WARNING,"Wrong username or password!", ButtonType.OK).show();
-            }
-        }
+//       if (actionEvent.getSource() == btnlogin) {
+//            String username = txtusername.getText();
+//            String password = txtpassword.getText();
+//            if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("1234")) {
+//                System.out.println("login success");
+//                Stage window = (Stage) pane.getScene().getWindow();
+//                window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"))));
+//                window.centerOnScreen();
+//            } else if
+//            (txtusername.getText().isEmpty() && txtpassword.getText().isEmpty()) {
+//                new Alert(Alert.AlertType.WARNING,"Please enter your data.", ButtonType.OK).show();
+//            } else {
+//                new Alert(Alert.AlertType.WARNING,"Wrong username or password!", ButtonType.OK).show();
+//            }
+//        }
+
+       if (actionEvent.getSource() == btnlogin){
+           String username = txtusername.getText();
+           String password = tpspassword.getText();
+           UserDTO userDTO = userService.search(username);
+           if (userDTO!=null){
+               if (username.equalsIgnoreCase(userDTO.getUsername())&&password.equalsIgnoreCase(userDTO.getPassword())){
+                   System.out.println("login sucess");
+                   Stage window = (Stage) pane.getScene().getWindow();
+                   window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/DashBoardForm.fxml"))));
+                   window.centerOnScreen();
+               }else if (txtusername.getText().isEmpty() && txtpassword.getText().isEmpty()) {
+                   new Alert(Alert.AlertType.WARNING,"Please enter your data.", ButtonType.OK).show();
+               }else {
+                   new Alert(Alert.AlertType.ERROR,"Password is not matched",ButtonType.CLOSE).show();
+               }
+           }else {
+               new Alert(Alert.AlertType.ERROR,"username is nt founded",ButtonType.OK).show();
+           }
+
+       }
     }
 
     public void signinFrameONMouseClicked(MouseEvent mouseEvent) throws IOException {

@@ -6,11 +6,17 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.hostelmanagementsystem.dto.custom.StudentDTO;
 import lk.ijse.hostelmanagementsystem.dto.custom.UserDTO;
+import lk.ijse.hostelmanagementsystem.service.custom.StudentService;
+import lk.ijse.hostelmanagementsystem.service.custom.UserService;
+import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentServiceImpl;
+import lk.ijse.hostelmanagementsystem.service.custom.impl.UserServiceImpl;
 
 import java.io.IOException;
 
@@ -27,6 +33,7 @@ public class SignUpframeController {
     public JFXTextField txthint;
     public Text txtlogin;
     public AnchorPane pane;
+    private final UserService userService = new UserServiceImpl();
 
     public void initialize()  {
         hidepassword.setVisible(false);
@@ -68,7 +75,14 @@ public class SignUpframeController {
     public void createacountOnAction(ActionEvent actionEvent) {
         if (tpspassword.getText().equals(tpsrepassword.getText())){
             UserDTO userDTO = makeObject();
-
+            UserDTO save = userService.save(userDTO);
+            if(save!=null){
+                new Alert(Alert.AlertType.INFORMATION,"User Added Success").show();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"User Adding Failed").show();
+            }
+        }else {
+            new Alert(Alert.AlertType.ERROR,"Password is Not matching");
         }
 
     }
