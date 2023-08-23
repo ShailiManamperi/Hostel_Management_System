@@ -7,6 +7,7 @@ lk\ijse\hostelmanagementsystem\dto\custom\RoomDTO.class
 lk\ijse\hostelmanagementsystem\dto\custom\StudentDTO.class
 lk\ijse\hostelmanagementsystem\controller\ReserveRoomsFormController$3.class
 lk\ijse\hostelmanagementsystem\dto\SuperDTO.class
+lk\ijse\hostelmanagementsystem\repo\custom\impl\UserRepoImpl.class
 lk\ijse\hostelmanagementsystem\util\task\ApplicationStartTask.class
 lk\ijse\hostelmanagementsystem\entity\custom\RoomType.class
 lk\ijse\hostelmanagementsystem\repo\custom\StudentRoomRepo.class
@@ -23,7 +24,9 @@ lk\ijse\hostelmanagementsystem\service\custom\RoomService.class
 lk\ijse\hostelmanagementsystem\repo\custom\StudentRepo.class
 lk\ijse\hostelmanagementsystem\service\custom\TransactionalService.class
 lk\ijse\hostelmanagementsystem\service\custom\impl\TransactionalServiceImpl.class
+lk\ijse\hostelmanagementsystem\service\custom\UserService.class
 lk\ijse\hostelmanagementsystem\controller\RemainingKeyMoneyFormController.class
+lk\ijse\hostelmanagementsystem\repo\custom\UserRepo.class
 lk\ijse\hostelmanagementsystem\tm\ReservedOrAvailableRoomTM.class
 lk\ijse\hostelmanagementsystem\entity\custom\Room.class
 lk\ijse\hostelmanagementsystem\controller\ReserveRoomsFormController$2.class
@@ -54,4 +57,5 @@ lk\ijse\hostelmanagementsystem\dto\custom\UserDTO.class
 lk\ijse\hostelmanagementsystem\entity\custom\StudentRoom.class
 lk\ijse\hostelmanagementsystem\repo\custom\RoomTypeRepo.class
 lk\ijse\hostelmanagementsystem\repo\SuperRepo.class
+lk\ijse\hostelmanagementsystem\service\custom\impl\UserServiceImpl.class
 lk\ijse\hostelmanagementsystem\service\custom\JoinService.class
