@@ -42,7 +42,7 @@ public class ManageStudentsFormController {
 
 
     public void initialize() throws IOException {
-        visualize();
+        setCellValueFactory();
         getDataToTable();
     }
 
@@ -96,7 +96,7 @@ public class ManageStudentsFormController {
         tblStudents.setItems(list);
     }
 
-    public void visualize(){
+    public void setCellValueFactory(){
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
@@ -121,6 +121,9 @@ public class ManageStudentsFormController {
         StudentDTO studentDTO = collectData();
         StudentDTO save = studentService.save(studentDTO);
         if(save!=null){
+//            tblStudents.getItems().add(new StudentTM(studentDTO.getId(),studentDTO.getName(),studentDTO.getAddress(),
+//                    studentDTO.getContact(),studentDTO.getCity(),studentDTO.getGmail()));
+            getDataToTable();
             new Alert(Alert.AlertType.INFORMATION,"Student Added Success").show();
         }else {
             new Alert(Alert.AlertType.ERROR,"Student Adding Failed").show();
