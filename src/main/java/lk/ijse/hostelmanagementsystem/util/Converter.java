@@ -8,6 +8,7 @@ import lk.ijse.hostelmanagementsystem.tm.RoomTM;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Converter {
@@ -118,6 +119,13 @@ public class Converter {
         for(Room room: rooms){
             list.add(new ReservedOrAvailableRoomTM(room.getId(),room.getRoomType().getDescription()
                     ,room.getRoomType().getId(),null));
+        }
+        return list;
+    }
+    public HashMap<String,Integer> convertObjectArrayToStringIntegerHashMap(List<Object[]> all){
+        HashMap<String,Integer> list = new HashMap<>();
+        for (Object[] values:all ) {
+            list.put(values[1].toString(),Integer.parseInt(values[0].toString()));
         }
         return list;
     }
