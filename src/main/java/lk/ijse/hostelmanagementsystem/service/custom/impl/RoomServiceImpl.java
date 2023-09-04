@@ -15,6 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RoomServiceImpl implements RoomService {
@@ -153,6 +154,21 @@ public class RoomServiceImpl implements RoomService {
             return converter.getAvailableRoomList(availableRooms);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public HashMap<String,Integer> getRoomCount() {
+        Session session = factory.getSession();
+        HashMap<String, Integer> hm = new HashMap<>();
+        try{
+            List<Object[]> roomCount = roomRepo.getRoomCount(session);
+            hm=Converter.getInstance().convertObjectArrayToStringIntegerHashMap(roomCount);
+            //hm=convertObjectArrayToStringIntegerHashMap(roomCount);
+            System.out.println(hm);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return null;
     }

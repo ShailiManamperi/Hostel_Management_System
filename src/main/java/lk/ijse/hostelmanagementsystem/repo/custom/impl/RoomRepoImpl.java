@@ -6,6 +6,7 @@ import lk.ijse.hostelmanagementsystem.repo.custom.RoomRepo;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RoomRepoImpl implements RoomRepo {
@@ -57,6 +58,15 @@ public class RoomRepoImpl implements RoomRepo {
         Query query = session.createQuery(" from Room r where r.availability = :av");
         query.setParameter("av","Available");
         List<Room> list = query.list();
+        return list;
+    }
+
+    @Override
+    public List<Object[]> getRoomCount(Session session) throws Exception {
+        Query query =session.createQuery("select distinct count(r.id) as roomCount,r.roomTypeId as roomType from Room r where " +
+                "r.availability='available' group by r.roomTypeId", Object[].class);
+        List list = query.list();
+        System.out.println(list);
         return list;
     }
 

@@ -9,10 +9,14 @@ import lk.ijse.hostelmanagementsystem.tm.ReservedOrAvailableRoomTM;
 import lk.ijse.hostelmanagementsystem.tm.RoomTM;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public interface RoomService extends CrudService<RoomDTO,String> {
     List<RoomDTO> getAvailableRooms(RoomTypeDTO roomType);
     List<RoomTM> getRoomDataToTable();
     List<ReservedOrAvailableRoomTM> getAvailableRooms();
+
+    HashMap<String,Integer> getRoomCount();
 }
