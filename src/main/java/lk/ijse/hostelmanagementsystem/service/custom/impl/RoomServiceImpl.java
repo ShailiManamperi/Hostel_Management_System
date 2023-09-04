@@ -2,6 +2,7 @@ package lk.ijse.hostelmanagementsystem.service.custom.impl;
 
 import lk.ijse.hostelmanagementsystem.dto.custom.RoomDTO;
 import lk.ijse.hostelmanagementsystem.dto.custom.RoomTypeDTO;
+import lk.ijse.hostelmanagementsystem.dto.custom.roomcountDTO;
 import lk.ijse.hostelmanagementsystem.entity.custom.Room;
 import lk.ijse.hostelmanagementsystem.entity.custom.RoomType;
 import lk.ijse.hostelmanagementsystem.repo.custom.RoomRepo;
@@ -159,17 +160,20 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public HashMap<String,Integer> getRoomCount() {
+    public List<roomcountDTO> getRoomCount() {
         Session session = factory.getSession();
         HashMap<String, Integer> hm = new HashMap<>();
-        try{
-            List<Object[]> roomCount = roomRepo.getRoomCount(session);
-            hm=Converter.getInstance().convertObjectArrayToStringIntegerHashMap(roomCount);
-            //hm=convertObjectArrayToStringIntegerHashMap(roomCount);
-            System.out.println(hm);
+        List<roomcountDTO> count = new ArrayList<>();
+        try {
+            count = roomRepo.getRoomCount(session);
+            //hm=Converter.getInstance().convertObjectArrayToStringIntegerHashMap(count);
+            System.out.println(count);
+            //System.out.println(notAvailableRooms);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+        }finally {
+            session.close();
         }
-        return null;
+        return count;
     }
 }

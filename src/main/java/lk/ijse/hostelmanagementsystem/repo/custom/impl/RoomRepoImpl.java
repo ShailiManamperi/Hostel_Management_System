@@ -2,9 +2,13 @@ package lk.ijse.hostelmanagementsystem.repo.custom.impl;
 
 import lk.ijse.hostelmanagementsystem.entity.custom.Room;
 import lk.ijse.hostelmanagementsystem.entity.custom.RoomType;
+import lk.ijse.hostelmanagementsystem.dto.custom.roomcountDTO;
 import lk.ijse.hostelmanagementsystem.repo.custom.RoomRepo;
 import org.hibernate.Session;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
+import org.hibernate.transform.Transformers;
+import org.hibernate.type.StandardBasicTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,19 +59,28 @@ public class RoomRepoImpl implements RoomRepo {
 
     @Override
     public List<Room> getAvailableRooms(Session session) throws Exception{
-        Query query = session.createQuery(" from Room r where r.availability = :av");
+        Query query = session.createQuery("from Room r where r.availability = :av");
         query.setParameter("av","Available");
         List<Room> list = query.list();
         return list;
     }
 
     @Override
-    public List<Object[]> getRoomCount(Session session) throws Exception {
-        Query query =session.createQuery("select distinct count(r.id) as roomCount,r.roomTypeId as roomType from Room r where " +
-                "r.availability='available' group by r.roomTypeId", Object[].class);
-        List list = query.list();
-        System.out.println(list);
-        return list;
+    public List<roomcountDTO> getRoomCount(Session session) throws Exception {
+        String sql = "SELECT COUNT(r.id) AS count, r.roomTypeId AS type " +
+                "FROM room r " +
+                "WHERE r.availability = 'available' " +
+                "GROUP BY r.roomTypeId";
+
+        NativeQuery<roomcountDTO> query = (NativeQuery<roomcountDTO>) session.createNativeQuery(sql)
+                .addScalar("count", StandardBasicTypes.INTEGER)
+                .addScalar("type", StandardBasicTypes.STRING)
+                .setResultTransformer(Transformers.aliasToBean(roomcountDTO.class));
+
+        List<roomcountDTO> roomCounts = query.list();
+        System.out.println(roomCounts);
+        return roomCounts;
+
     }
 
 }

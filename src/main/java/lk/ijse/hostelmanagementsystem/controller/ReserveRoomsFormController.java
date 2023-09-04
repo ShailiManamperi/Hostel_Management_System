@@ -140,13 +140,14 @@ public class ReserveRoomsFormController {
         double payment = Double.parseDouble(txtPayingAmount.getText());
 
         room.setAvailability("Not Available");
-
+        System.out.println("setdata");
         StudentRoomDTO studentRoom = new StudentRoomDTO(reservationId,payment,
                 LocalDate.now(),calDateFrom.getValue(),calDateTo.getValue()
                 ,student,room);
-
+        System.out.println("start");
         TransactionalService transactionalService = new TransactionalServiceImpl();
         boolean isAdded = transactionalService.reserveRoom(studentRoom);
+        System.out.println(isAdded);
         if(isAdded){
             new Alert(Alert.AlertType.INFORMATION,"Data Added").show();
         }else {

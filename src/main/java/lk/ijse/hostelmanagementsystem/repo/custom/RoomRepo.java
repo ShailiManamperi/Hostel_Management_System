@@ -1,5 +1,6 @@
 package lk.ijse.hostelmanagementsystem.repo.custom;
 
+import lk.ijse.hostelmanagementsystem.dto.custom.roomcountDTO;
 import lk.ijse.hostelmanagementsystem.entity.custom.Room;
 import lk.ijse.hostelmanagementsystem.entity.custom.RoomType;
 import lk.ijse.hostelmanagementsystem.repo.SuperRepo;
@@ -13,5 +14,5 @@ public interface RoomRepo extends SuperRepo<Room,String> {
     boolean updateAvailability(Room room,Session session) throws Exception;
     List<Room> getAvailableRooms(Session session) throws Exception;
 
-    List<Object[]> getRoomCount(Session session) throws Exception;
+    List<roomcountDTO> getRoomCount(Session session) throws Exception;
 }

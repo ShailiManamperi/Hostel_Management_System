@@ -48,7 +48,6 @@ public class TransactionalServiceImpl implements TransactionalService {
         }
         return false;
     }
-
     @Override
     public boolean makeLeave(StudentRoomDTO studentRoomDTO){
         Session session = FactoryConfiguration.getInstance().getSession();

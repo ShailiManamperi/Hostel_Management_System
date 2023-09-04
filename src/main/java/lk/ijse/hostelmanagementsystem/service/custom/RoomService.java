@@ -2,6 +2,7 @@ package lk.ijse.hostelmanagementsystem.service.custom;
 
 import lk.ijse.hostelmanagementsystem.dto.custom.RoomDTO;
 import lk.ijse.hostelmanagementsystem.dto.custom.RoomTypeDTO;
+import lk.ijse.hostelmanagementsystem.dto.custom.roomcountDTO;
 import lk.ijse.hostelmanagementsystem.entity.custom.Room;
 import lk.ijse.hostelmanagementsystem.entity.custom.RoomType;
 import lk.ijse.hostelmanagementsystem.service.CrudService;
@@ -18,5 +19,5 @@ public interface RoomService extends CrudService<RoomDTO,String> {
     List<RoomTM> getRoomDataToTable();
     List<ReservedOrAvailableRoomTM> getAvailableRooms();
 
-    HashMap<String,Integer> getRoomCount();
+    List<roomcountDTO> getRoomCount();
 }
