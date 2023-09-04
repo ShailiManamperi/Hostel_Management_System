@@ -20,6 +20,12 @@ public class DashBoardFormController {
     public AnchorPane dashBoardContext;
     public JFXButton btnLogout;
     public AnchorPane dashBoardMainContext;
+    public void initialize() throws IOException {
+        //setTime();
+        dashBoardContext.getChildren().clear();
+        dashBoardContext.getChildren().add(FXMLLoader.load(getClass().getResource("/view/HomeForm.fxml")));
+    }
+
 
     public void btnLogoutOnAction(ActionEvent actionEvent) throws IOException {
         ((Stage)dashBoardMainContext.getScene().getWindow()).setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/LoginForm.fxml"))));
