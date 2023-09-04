@@ -16,14 +16,17 @@ C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hoste
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\dto\custom\StudentDTO.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\StudentRoomService.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\impl\RoomTypeServiceImpl.java
+C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\UserService.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\impl\StudentRepoImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\impl\JoinServiceImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\impl\RoomTypeRepoImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\entity\custom\StudentRoom.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\controller\SignUpframeController.java
+C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\impl\UserServiceImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\StudentService.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\controller\SignInFrameController.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\StudentRoomRepo.java
+C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\impl\UserRepoImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\dto\SuperDTO.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\impl\StudentRoomRepoImpl.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\RoomRepo.java
@@ -37,6 +40,7 @@ C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hoste
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\controller\ManageStudentsFormController.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\TransactionalService.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\service\custom\impl\TransactionalServiceImpl.java
+C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\repo\custom\UserRepo.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\controller\RemainingKeyMoneyFormController.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\tm\RemainingKeyMoneyTM.java
 C:\Users\Admin\Downloads\D24Hostel Management System\src\main\java\lk\ijse\hostelmanagementsystem\entity\custom\RoomType.java
